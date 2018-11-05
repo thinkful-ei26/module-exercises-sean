@@ -45,5 +45,13 @@ const store = (function() {
     this.items.splice(this.items.findIndex(item => item.id === id), 1);
   }
 
-  return {items, hideCheckedItems, searchTerm, findById, addItem, findAndToggleChecked, findAndUpdateName, findAndDelete};
+  function toggleCheckedFilter() {
+    this.hideCheckedItems = !this.hideCheckedItems;
+  }
+
+  function setSearchTerm(val) {
+    this.searchTerm = val;
+  }
+
+  return {items, hideCheckedItems, searchTerm, findById, addItem, findAndToggleChecked, findAndUpdateName, findAndDelete, toggleCheckedFilter, setSearchTerm};
 }());
